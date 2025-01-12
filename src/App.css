@@ -49,6 +49,93 @@ h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
+a {color: #35393F;}
+
+
+/* GLOBAL CSS DEFINITIONS */
+p  {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #7C8187;
+}
+
+blockquote {
+  background-color: #F5F5F5;
+  border-left: 1px solid #E46643;
+  padding: 24px;
+}
+blockquote p {
+  color: #000000;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+h1 {
+  color: #35393F;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 42.2px;
+}
+
+h2 {
+  color: #35393F;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 36.93px;
+}
+
+h3 {
+  color: #35393F;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31.65px;
+}
+
+h4 {
+  color: #35393F;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26.38px;
+}
+
+h5 {
+  color: #35393F;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 21.1px;
+}
+
+h6 {
+  color: #E46643;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18.46px;
+
+}
+
+ul,ol {
+  padding-inline: 24px;
+}
+
+li::marker {
+  color: #E46643;
+}
+li {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #7C8187;
+}
+
+ol li::marker {
+  color: #7C8187;
+ }
+
+/* global end */
+
+
 header {
   display: flex;
   align-items: center;
@@ -108,7 +195,7 @@ header .nav-mobile {
 
 header .hamburger-checkbox:checked ~ .nav-mobile {
   display: block;
-  animation: slide 0.5s ease-in;
+  animation: slide 0.3s ease-in;
 }
 
 .nav-mobile {
@@ -163,16 +250,19 @@ header .hamburger-checkbox:checked ~ .nav-mobile {
   }
 }
 
+
+
 .margin {
   overflow: hidden;
   transition: margin-left 0.3s ease-in-out;
+  margin-left: 120px;
 }
 
-/* .editor {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-} */
-
+.editor {
+  padding-inline: 16px;
+  margin-block: 16px;
+}
+ 
 .preview-area {
   display: flex;
   justify-content: space-between;
@@ -195,6 +285,7 @@ header .hamburger-checkbox:checked ~ .nav-mobile {
 }
 
 .result-area {
+  font-family: 'Roboto Slab';
   display: block;
 }
 
@@ -228,5 +319,8 @@ color: #7C8187;
   }
 }
 
+dialog {
+  margin: auto;
+}
 
 
