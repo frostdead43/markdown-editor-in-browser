@@ -1,0 +1,232 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+/* 5. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  background-color: #2B2D31;
+  justify-content: space-between;
+}
+
+.hamburger-area {
+  display: flex;
+}
+
+.hamburger-icon {
+  background: #35393F;
+  padding-block: 21px;
+  padding-inline: 17px;
+  margin-right: 24px;
+  cursor: pointer;
+}
+
+header input {
+  background: url('../assets/img/file.svg') no-repeat center left 0% ;
+  border: none;
+  outline: none;
+  padding-left: 32px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 17.58px;
+  color: #fff;
+}
+
+.button-area {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.save-icon {
+  background-color: #E46643;
+  padding: 12px;
+  margin-right: 8px;
+}
+
+ .hamburger-checkbox {
+  position: absolute;
+  z-index: 2;
+  left: 18px;
+  top: 21px;
+  height: 17px;
+  width: 21px;
+  /* display: none; */
+
+}
+
+header .nav-mobile {
+  display: none;
+}
+
+header .hamburger-checkbox:checked ~ .nav-mobile {
+  display: block;
+  animation: slide 0.5s ease-in;
+}
+
+.nav-mobile {
+  height: 100%;
+  width: 70%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #1D1F22;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  padding-inline: 24px;
+  max-width: 250px;
+  
+  button {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 17.58px;
+    color: #FFFFFF; 
+    background: #E46643;
+    border-radius: 4px;
+    padding: 10px 44px 12px 42px;
+    border: none;
+    cursor: pointer;
+    margin-top: 29px;
+  }
+  h3 {
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18.35px;
+    letter-spacing: 5px;
+  }
+
+  h6 {
+    color: #7C8187;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.41px;
+    letter-spacing: 2px;
+    margin-top: 27px;
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.margin {
+  overflow: hidden;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+/* .editor {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+} */
+
+.preview-area {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 13px 14px;
+  background-color: #F5F5F5;
+  padding-inline: 15px;
+
+  h5 {
+  color: #7C8187;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.41px;
+  letter-spacing: 2px;
+  text-align: left;
+  }
+}
+
+.display {
+  display: none;
+}
+
+.result-area {
+  display: block;
+}
+
+.text-area {
+  width: 100%;
+  height: 100vh;
+  resize: none;
+  border: none;
+}
+
+.menu-items {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 26px;
+   
+  h5 {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 17.58px;
+    color: #fff;
+  }
+  
+  span {
+font-size: 13px;
+font-weight: 300;
+line-height: 15.23px;
+color: #7C8187;
+
+  }
+}
+
+
+
