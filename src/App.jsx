@@ -7,11 +7,11 @@ const productData = data[0].content
 
 function App() {
   const [defaultMarkdown, setDefaultMarkdown] = useState(productData);
-  const [isChecked,setIsChecked] = useState(false)
-  const [addFile,setAddFile] = useState([])
-  const [showMarkDown, setShowMarkDown] = useState(false)
+  const [isChecked,setIsChecked] = useState(false);
+  const [addFile,setAddFile] = useState([]);
+  const [showMarkDown, setShowMarkDown] = useState(false);
   const [fileName, setFileName] = useState("welcome.md");
-  const [activeFile, setActiveFile] = useState(null)
+  const [activeFile, setActiveFile] = useState(null);
   const dialogRef = useRef(null);
 
   function handleConfirmDelete() {
@@ -19,7 +19,7 @@ function App() {
   }
 
   function handleCheck() {
-    setIsChecked(!isChecked)
+    setIsChecked(!isChecked);
   }
 
 
@@ -42,8 +42,8 @@ function App() {
     setActiveFile(file.id);
     setFileName("untitled.md");
     setDefaultMarkdown(productData);
-    console.log(file)
-    console.log(addFile)
+    console.log(file);
+    console.log(addFile);
   }
 
   function selectFile(id) {
@@ -66,7 +66,7 @@ function App() {
   }
 
   function showDisableMarkDown() {
-    setShowMarkDown(!showMarkDown)
+    setShowMarkDown(!showMarkDown);
   }
 
  
@@ -127,7 +127,7 @@ function Header({handleCheck,isChecked,sendFiles, selectFile, addFile, setAddFil
   </div>
 
     <div className='button-area'>
-      <img  onClick={handleConfirmDelete}  src="./assets/img/trash.svg"/>
+      <img className='delete-icon'  onClick={handleConfirmDelete}  src="./assets/img/trash.svg"/>
       <img className='save-icon' onClick={handleSave} src="./assets/img/save.svg"/>
     </div>
     <dialog className='dialog-area' ref={dialogRef}>
@@ -144,8 +144,7 @@ function Header({handleCheck,isChecked,sendFiles, selectFile, addFile, setAddFil
 
 function Main({defaultMarkdown, setDefaultMarkdown,showMarkDown, showDisableMarkDown, handleContentChange }) {
   function handleMarkDown(e) {
-    setDefaultMarkdown(e.target.value)
-    
+    setDefaultMarkdown(e.target.value);
   }
 
   function getMarkDown() {
@@ -153,7 +152,7 @@ function Main({defaultMarkdown, setDefaultMarkdown,showMarkDown, showDisableMark
     };
 
   function handleSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
     }
  
     
