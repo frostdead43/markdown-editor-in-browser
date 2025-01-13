@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { marked } from 'marked';
 import data from "./data.json";
+import "./reset.css"
 import './App.css'
 const productData = data[0].content 
 
@@ -14,7 +15,7 @@ function App() {
   const dialogRef = useRef(null);
 
   function handleConfirmDelete() {
-    dialogRef.current.showModal()
+    dialogRef.current.showModal();
   }
 
   function handleCheck() {
@@ -92,10 +93,14 @@ function Header({handleCheck,isChecked,sendFiles, selectFile, addFile, setAddFil
     setFileName(selectedData[selectedData.length - 1].title); 
   }else {
     sendFiles();
-    setFileName("welcome");
+    setFileName("welcome.md");
     setDefaultMarkdown(productData);
   }
-  dialogRef.current.close()
+  dialogRef.current.close();
+ }
+
+ function handleCancel() {
+  dialogRef.current.close();
  }
  
  return(
@@ -125,10 +130,13 @@ function Header({handleCheck,isChecked,sendFiles, selectFile, addFile, setAddFil
       <img  onClick={handleConfirmDelete}  src="./assets/img/trash.svg"/>
       <img className='save-icon' onClick={handleSave} src="./assets/img/save.svg"/>
     </div>
-    <dialog ref={dialogRef}>
+    <dialog className='dialog-area' ref={dialogRef}>
      <h4>Delete this document?</h4>
      <p>Are you sure you want to delete the {fileName} document and its contents? This action cannot be reversed.</p>
+     <div className='dialog-buttons'>
      <button onClick={handleDelete}>Confirm & Delete</button>
+     <button onClick={handleCancel}>Cancel</button>
+     </div>
     </dialog>
 </header>
  )
